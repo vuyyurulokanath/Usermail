@@ -200,7 +200,7 @@ public class UserDetailsController {
 	@RequestMapping(value = "/upload/{id}", method = { RequestMethod.POST, RequestMethod.GET })
 	public String uploadfile(ModelMap map, @PathVariable("id") long id, @RequestParam("file") MultipartFile file)
 			throws IOException {
-		System.out.println(id);
+
 		if (file.isEmpty() || file == null || file.getOriginalFilename() == null) {
 			map.addAttribute("message", "no file is to upload select file");
 			return "errormsg";
