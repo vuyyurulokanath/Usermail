@@ -202,7 +202,7 @@ public class UserDetailsController {
 			throws IOException {
 
 		if (file.isEmpty() || file == null || file.getOriginalFilename() == null) {
-			map.addAttribute("message", "no file is to upload select file");
+			map.addAttribute("message", "PLEASE SELECT A FILE TO UPLOAD.");
 			return "errormsg";
 		} else if (file != null) {
 			UserDetails userdata = userService.findById(id);
