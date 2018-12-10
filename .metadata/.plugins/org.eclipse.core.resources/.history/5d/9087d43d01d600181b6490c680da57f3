@@ -1,0 +1,14 @@
+package com.prpl.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.prpl.dao.UserRepository;
+
+public class UserController {
+	@Autowired
+	UserRepository ur;
+	
+	
+	
+
+}

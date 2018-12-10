@@ -1,0 +1,107 @@
+package com.prpl.controller;
+
+import java.util.List;
+
+
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+
+import com.prpl.controller.StudentController;
+import com.prpl.model.Student;
+import com.prpl.service.StudentService;
+
+@Controller
+public class StudentController {
+	
+	
+	
+	@Autowired(required=true)
+	private StudentService service;
+	
+   
+   
+    
+	
+	@RequestMapping(value="/save" ,method=RequestMethod.POST)
+	public ModelAndView saveStudent(@ModelAttribute Student stu)
+	{
+		
+		service.savestudent(stu);
+		
+		
+		
+		return new ModelAndView("redirect:/");
+		
+	}
+
+	
+	
+	@RequestMapping(value="/update",method=RequestMethod.GET)
+	public ModelAndView updatestudent(HttpServletRequest request)
+	{
+		int Studentid=Integer.parseInt(request.getParameter("id"));
+		
+		
+		Student  stu = service.getStudent(Studentid);
+		ModelAndView model = new ModelAndView("studentForm");
+		model.addObject("student", stu);
+
+		return model;
+		
+	}
+	@RequestMapping(value="/")
+	public ModelAndView list(ModelAndView model)
+	{
+		List<Student> list=service.list();
+		model.addObject(list);
+		model.setViewName("index");
+		
+		
+		return null;
+		
+	}
+	@RequestMapping(value="/delete", method = RequestMethod.GET)
+	public ModelAndView deletestudent(HttpServletRequest request)
+	{
+		int studentid = Integer.parseInt(request.getParameter("id"));
+		service.deletestudent(studentid);
+		return new ModelAndView("redirect:/");
+		
+		
+		
+		
+	}
+	@RequestMapping(value = "/editEmployee", method = RequestMethod.GET)
+	public ModelAndView editContact(HttpServletRequest request) {
+		int studentid = Integer.parseInt(request.getParameter("id"));
+		Student stu = service.getStudent(studentid);
+		ModelAndView model = new ModelAndView("studentform");
+		model.addObject(stu);
+
+		return model;
+	}
+	
+	
+	@RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
+	public ModelAndView newContact(ModelAndView model) {
+		Student stu = new Student();
+		model.addObject(stu);
+		model.setViewName("studentform");
+		return model;
+	}
+	
+	
+	
+	
+	
+}

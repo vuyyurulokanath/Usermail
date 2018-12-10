@@ -1,0 +1,44 @@
+package com.prpl.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.prpl.model.Employee;
+@Service
+public class ServiceImpl implements ServiceDAO {
+	private ServiceDAO DAO;
+	
+	public void setServiceDAO(ServiceDAO DAO) {
+		this.DAO = DAO;
+	}
+	@Transactional
+	public void addEmployee(Employee e) {
+		this.DAO.addEmployee(e);
+
+	}
+
+	public void updateEmployee(Employee e) {
+		this.DAO.updateEmployee(e);
+
+	}
+
+	public List<Employee> listEmployees() {
+		
+		
+		
+		return DAO.listEmployees();
+	}
+
+	public Employee getEmployeeById(int id) {
+		
+		return DAO.getEmployeeById(id);
+	}
+
+	public void removeEmployee(int id) {
+		this.DAO.removeEmployee(id);
+
+	}
+
+}

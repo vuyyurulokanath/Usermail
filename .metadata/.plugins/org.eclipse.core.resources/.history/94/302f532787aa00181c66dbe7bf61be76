@@ -1,0 +1,5 @@
+package com.prpl.jpa;
+
+public class Address {
+
+}

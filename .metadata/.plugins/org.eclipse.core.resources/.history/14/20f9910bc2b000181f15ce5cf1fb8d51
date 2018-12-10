@@ -1,0 +1,13 @@
+package com.prpl.model;
+@Entity
+@Table(name="upload")
+public class UploadFile {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	@Column(name="filename")
+    private String fileName;
+	@Column(name="data")
+    private byte[] data;
+
+}

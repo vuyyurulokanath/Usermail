@@ -1,0 +1,12 @@
+package com.prpl.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.prpl.DAO.StudentDAO;
+
+@Controller
+public class StudentController {
+	 @Autowired  
+	 StudentDAO dao;
+}

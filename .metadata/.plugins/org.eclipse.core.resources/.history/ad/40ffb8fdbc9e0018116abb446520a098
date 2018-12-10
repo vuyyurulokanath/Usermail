@@ -1,0 +1,35 @@
+package com.prpl.DAO;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.prpl.model.Employee;
+@Repository
+public class EmployeeImpl implements EmployeeDAO {
+
+	public void addEmployee(Employee emp) {
+		
+
+	}
+
+	public void updateEmployee(Employee emp) {
+		
+
+	}
+
+	public List<Employee> listEmployee() {
+		
+		return null;
+	}
+
+	public Employee getEmployeeById(int id) {
+		
+		return null;
+	}
+
+	public void removeEmployee(int id) {
+		
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.prpl.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.prpl.DAO.StudentDAO;
+import com.prpl.Model.Student;
+
+@Controller
+public class StudentController {
+	 @Autowired  
+	 StudentDAO dao;
+	 
+	 @RequestMapping("/stuform")  
+	    public ModelAndView showform(){  
+	        return new ModelAndView("empform","command",new Student());  
+	    }  
+	 @RequestMapping(value="/save",method = RequestMethod.POST)  
+	    public ModelAndView save(@ModelAttribute("student") Student stu){  
+	        dao.save(stu);  
+	        return new ModelAndView("redirect:/viewmap");//will redirect to viewemp request mapping  
+	    }  
+	 
+}

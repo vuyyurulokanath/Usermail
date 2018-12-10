@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <html>
+   <head>
+      <title>Spring MVC Form Handling</title>
+   </head>
+   
+   
+   <body>
+    
+    
+    
+    
+<h1>Add New Employee</h1>  
+       <form:form method="post" action="save">    
+        <table >    
+         <tr>    
+          <td>Name : </td>   
+          <td><form:input path="name"  /></td>  
+         </tr>    
+         <tr>    
+          <td>email :</td>    
+          <td><form:input path="email" /></td>  
+         </tr>   
+         <tr>    
+          <td>address :</td>    
+          <td><form:input path="address" /></td>  
+         </tr>   
+         <tr>    
+          <td> </td>    
+          <td><input type="submit" value="Save" /></td>    
+         </tr>    
+        </table>    
+       </form:form> 
+       
+       
+       </body>
+   
+</html>   

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;SecurityConfiguration.java&apos; to &apos;spring-security-example/src/main/java/com.prp.config&apos;&#x0A;- Original project: &apos;spring-security-example&apos;&#x0A;- Destination element: &apos;spring-security-example/src/main/java/com.prp.config&apos;&#x0A;- Original element: &apos;com.prpl.security.springsecurityexample.SecurityConfiguration.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java&lt;com.prp.config" element1="/src\/main\/java&lt;com.prpl.security.springsecurityexample{SecurityConfiguration.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1539847351979" units="1" version="1.0"/>
+</session>

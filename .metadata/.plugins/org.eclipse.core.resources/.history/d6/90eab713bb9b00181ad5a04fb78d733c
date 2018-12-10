@@ -1,0 +1,46 @@
+package com.prpl.DAO;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.prpl.model.Student;
+
+@Repository
+@Transactional
+public class StudentDaoImpl implements StudentDAO {
+
+	@Autowired
+	public SessionFactory factory;
+
+	public int addstudent(Student student) {
+	    factory.getCurrentSession().save(student);
+	    
+		return student.getId();
+	}
+
+	public void updatestudent(int id, Student student) {
+		 Session session = factory.getCurrentSession();
+		Student student2=(Student) session.byId(Student.class).load(id);
+        student2.setFirstname(student.getFirstname());
+	
+	
+	
+	}
+
+	public void deletestudent(int id) {
+		
+		
+	}
+
+	public List<Student> getstudentinfo() {
+		
+		return null;
+	}
+
+	
+}

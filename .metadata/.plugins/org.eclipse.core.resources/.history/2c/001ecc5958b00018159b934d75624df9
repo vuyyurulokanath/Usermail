@@ -1,0 +1,191 @@
+package com.prpl.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.prpl.model.Address;
+import com.prpl.model.LoginModel;
+import com.prpl.model.Users;
+import com.prpl.service.ServiceAddressDao;
+import com.prpl.service.ServiceDao;
+
+@Controller
+public class UserAddress {
+
+	
+	@Autowired
+
+	private ServiceDao dao;
+
+	public void setServiceDao(ServiceDao dao) {
+		this.dao = dao;
+	}
+	@Autowired
+	ServiceAddressDao adao;
+	public void setServiceAddressDao(ServiceAddressDao adao)
+	{
+		this.adao=adao;
+	}	
+	
+	@RequestMapping(value = "/loginpage", method = RequestMethod.GET)
+	public ModelAndView newContact(ModelAndView model) {
+		Users user = new Users();
+		model = new ModelAndView("login");
+		model.addObject("users", user);
+
+		return model;
+	}
+	
+	
+	@RequestMapping(value="/login",method=RequestMethod.POST)
+	public ModelAndView check(@ModelAttribute LoginModel lmodel, ModelAndView model) {
+		
+		String username = lmodel.getUsername();
+		System.out.println(username+":username in controller");
+		String password = lmodel.getPassword();
+
+		System.out.println(password+ ": user in controller");
+
+		lmodel.setUsername(username);
+		lmodel.setPassword(password);
+		
+		
+		String validate=dao.Authenticateuser(lmodel);
+		if (validate.equals("admin")) {
+			model = new ModelAndView("redirect:/users");
+		
+		}else if (validate.equals("user")) {
+			
+			Users user = dao.findbyusername(username);
+			System.out.println(user+"in controller");
+			
+			model = new ModelAndView("userinfo");
+			model.addObject("user", user);
+		}
+		
+		return model;
+	
+	}
+	
+
+
+
+	@RequestMapping(value = "/users", method = RequestMethod.GET)
+	public ModelAndView getdata() {
+
+		List<Users> list = dao.getlist();
+
+		ModelAndView model = new ModelAndView("admin");
+		model.addObject("lists", list);
+
+		return model;
+
+	}
+	@RequestMapping("/remove/{id}")
+	public String removeuser(@PathVariable("id") int id) {
+		System.out.println(id);
+
+		dao.deleteuser(id);
+		return "redirect:/users";
+	}
+
+	@RequestMapping(value = "/newuser", method = RequestMethod.GET)
+	public ModelAndView newuser(ModelAndView model) {
+		Users user = new Users();
+List<Address> list=adao.getlist();
+		model = new ModelAndView("register");
+		model.addObject("user", user);
+		model.addObject("addresslists", list);
+	
+
+		return model;
+	}
+
+	@RequestMapping(value = "/saveuser", method = RequestMethod.POST)
+	public ModelAndView saveuser(@ModelAttribute("user") Users user) {
+		
+		
+		if (user.getId() == 0) {
+			dao.adduser(user);
+			
+
+		} else {
+			dao.updateuser(user);
+			
+		}
+		
+		
+		
+		
+		return new ModelAndView("redirect:/users");
+	
+	}
+
+
+	@RequestMapping(value = "/edituser", method = RequestMethod.GET)
+	public ModelAndView editContact(@RequestParam("id") int id) 
+	{
+		System.out.println(id+":::::::ID");
+		Users user=dao.getuserbyid(id);
+		
+		List<Address> list=adao.getlist();
+		ModelAndView model = new ModelAndView("register");
+		model.addObject("user", user);
+		model.addObject("addresslists", list);
+		
+		
+		
+		return model;
+		
+	}
+	@RequestMapping(value = "/address", method = RequestMethod.GET)
+	public ModelAndView getaddress()
+	{
+		ModelAndView model=new ModelAndView();
+		
+		List<Address> listaddress=adao.getlist();
+		System.out.println(listaddress+":::::::::list");
+		 model = new ModelAndView("addresss");		
+		 model.addObject("addresslists", listaddress);
+	
+		return model;
+		
+	}
+	@RequestMapping(value = "/newaddress", method = RequestMethod.GET)
+	public ModelAndView newaddress(ModelAndView model) {
+		Address add = new Address();
+		model = new ModelAndView("addcountry");
+		model.addObject("add", add);
+
+		return model;
+	}
+	@RequestMapping(value = "/saveaddress", method = RequestMethod.POST)
+	
+	public ModelAndView saveaddress(@ModelAttribute("address") Address address) {
+		
+		
+		if(address.getId()==0)
+		{
+			adao.addaddress(address);
+		}else 
+		{
+			adao.updateaddress(address);
+		}
+		
+		
+		return new ModelAndView("redirect:/address");
+	
+	
+	
+}
+
+
+}

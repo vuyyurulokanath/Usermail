@@ -1,0 +1,58 @@
+package com.prpl.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.prpl.controller.StudentController;
+import com.prpl.model.Student;
+import com.prpl.service.StudentService;
+
+@Controller
+public class StudentController {
+	
+	
+	private static final Logger logger = Logger
+			.getLogger(StudentController.class);
+	@Autowired
+	private StudentService service;
+	
+   
+   
+    
+	
+	@RequestMapping(value="/save" ,method=RequestMethod.POST)
+	public ModelAndView saveStudent(@ModelAttribute Student stu)
+	{
+		
+		service.savestudent(stu);
+		
+		
+		
+		return new ModelAndView("redirect:/");
+		
+	}
+
+	
+	
+	@RequestMapping(value="/update",method=RequestMethod.GET)
+	public ModelAndView updatestudent(HttpServletRequest request)
+	{
+		int Studentid=Integer.parseInt(request.getParameter("id"));
+		
+		
+		Student  stu = service.getStudent(Studentid);
+		ModelAndView model = new ModelAndView("studentForm");
+		model.addObject("student", stu);
+
+		return model;
+		
+	}
+}

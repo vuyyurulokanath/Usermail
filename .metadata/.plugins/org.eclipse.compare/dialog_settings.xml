@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ResizableDialogBounds">
+		<item value="193" key="x"/>
+		<item value="1257" key="width"/>
+		<item value="24" key="y"/>
+		<item value="676" key="height"/>
+	</section>
+	<section name="PatchWizard">
+		<item value="813" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="711" key="DIALOG_HEIGHT"/>
+		<item value="372" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="PreviewPatchPage">
+	</section>
+</section>

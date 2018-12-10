@@ -1,0 +1,12 @@
+package com.prpl.service;
+
+import com.prpl.model.Student;
+
+public interface EmployeeService {
+ 
+	
+	
+	
+	public void savestudent(Student stu);
+	public void updatestudent(Student stu);
+}

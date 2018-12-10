@@ -1,0 +1,20 @@
+package com.prpl.model;
+
+
+@Entity
+@Table(name="emp11")
+public class Employee {
+	
+	
+	@Id
+	@GeneratedValue(Stratagy=Generated.Type=IDENTITTY)
+	private int id;
+	@Column(name="name")
+	private String name;
+	@Column(name="email")
+	private String email;
+	@Column(name="address")
+	private String address;
+	
+
+}

@@ -1,0 +1,9 @@
+<html>
+<body>
+<h1>Upload Status</h1>
+<h2>Message :file is uploaded sussusfully</h2>
+
+<h4>click to upload new file<a href="upload">click here</a></h4>	
+<h2><a herf="upload">click to upload new file</a></h2>
+</body>
+</html>

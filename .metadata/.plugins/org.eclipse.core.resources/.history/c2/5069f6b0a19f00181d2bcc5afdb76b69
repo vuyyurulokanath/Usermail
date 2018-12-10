@@ -1,0 +1,20 @@
+package com.prpl.service;
+
+import java.util.List;
+
+
+import com.prpl.model.Student;
+
+
+public interface StudentService {
+ 
+	
+	
+	
+	public void addstudent(Student p);
+	public void updatestudent(Student p);
+	public List<Student> liststudents();
+	public Student getstudentById(int id);
+	public void removestudent(int id);
+	
+}

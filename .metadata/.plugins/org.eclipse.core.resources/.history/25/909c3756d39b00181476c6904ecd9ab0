@@ -1,0 +1,31 @@
+package com.prpl.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.prpl.model.Student;
+import com.prpl.service.ServiceDAO;
+
+
+@RestController
+
+public class StudentController {
+	@Autowired
+	public ServiceDAO dao;
+	
+	@PostMapping("/student")
+	public int savestudent(@RequestBody Student student)
+	{
+		
+		
+		return dao.save(student);
+		
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,50 @@
+package com.prpl.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.prpl.model.Student;
+import com.prpl.service.ServiceDAOImpl;
+
+@RestController
+@RequestMapping("/studentResource")
+public class StudentController {
+	
+	@Autowired
+	ServiceDAOImpl serviceDAOImpl;
+	@RequestMapping("/addstudent")
+	public void addstudent(@RequestBody Student student)
+	{
+		serviceDAOImpl.addstudent(student);
+		
+	}
+	@RequestMapping("/updatestudent")
+	public void updatestudent(@RequestBody Student student)
+	{
+		serviceDAOImpl.updatestudent(student);
+	}
+	@RequestMapping("/delete/{id}")
+	public void deletestudent(@PathVariable("id") int id)
+	{
+		serviceDAOImpl.deletestudent(id);
+	
+	}
+	
+	@RequestMapping(value = "/getstudentinfo")
+	public List getstudentinfo()
+	{
+		List students = serviceDAOImpl.getstudentinfo();
+		return students;
+	
+		
+	}
+	
+	
+
+}

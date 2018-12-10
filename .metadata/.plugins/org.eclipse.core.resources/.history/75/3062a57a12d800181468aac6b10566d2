@@ -1,0 +1,15 @@
+#spring.social.facebook.appId=384261248599251
+#spring.social.facebook.appSecret=fd7fa1c5f5a267f463263a0ce7ff2025
+spring.social.facebook.appId=233668646673605
+spring.social.facebook.appSecret=33b17e044ee6a4fa383f46ec6e28ea1d
+
+spring.social.linkedin.app-id=771mrzk94hye1w
+spring.social.linkedin.app-secret=iIJFgBf9lCb18zYe
+
+#spring.social.google.appId=1053985957273-galh3vbe7mi10jesqdpd6j623qncar5j.apps.googleusercontent.com
+#spring.social.google.appSecret=qmD8cWUhQlOQnumMCBFENUQ0
+
+spring.social.google.appId=12894100090-tqso3lih5o42isneort886la2pesafmp.apps.googleusercontent.com
+spring.social.google.appSecret=9xfU16efvxQ-BTMsXT9wOLpw
+
+server.port:3000

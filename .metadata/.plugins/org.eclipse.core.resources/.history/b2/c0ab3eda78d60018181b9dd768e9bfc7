@@ -1,0 +1,5 @@
+package com.prp.swaggerconfig;
+
+public class SwaggerConfig {
+
+}

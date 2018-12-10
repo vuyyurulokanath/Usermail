@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
+    
+    <html>
+<body>
+<h3 align="center">User details</h3>
+<div align="center">
+
+	
+    <h1> welcome <td>${user.username}</td></h1>
+    
+    
+<table style="width:2%"  border="10">
+  <tr>
+    <th>USER NAME</th>
+    <th>FIRST NAME</th> 
+    <th>LAST NAME</th><th>AGE</th><th>CITY</th><th>STATE</th>
+    <th>COUNTRY</th><th>PINCODE</th><th>ROLE</th>
+    <th>PASSWORD</th>
+    <th>EDIT</th>
+    
+  </tr>
+		
+			<c:if test="${user.role  == 'user'}">
+			
+			<tr>
+			 
+				<td>${user.username} </td>
+				<td>${user.firstname}</td>
+				<td>${user.lastname} </td>
+				<td>${user.age}</td>
+				<td>${user.city}</td>
+				<td>${user.state}</td>
+				<td>${user.country}</td>
+				<td>${user.pincode}</td>
+				<td>${user.role}</td>
+				<td>${user.password} </td>
+				<td><a href="edituser?id=${user.id}">Edit</a></td>
+			
+			
+				
+				</tr>
+			</c:if>
+	
+</table>
+
+	</div>
+</body>
+</html>

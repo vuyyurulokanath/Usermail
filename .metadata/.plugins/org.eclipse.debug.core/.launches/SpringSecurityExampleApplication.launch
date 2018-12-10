@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/spring-security-example/src/main/java/com/prpl/security/springsecurityexample/SpringSecurityExampleApplication.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.prpl.security.springsecurityexample.SpringSecurityExampleApplication"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="spring-security-example"/>
+</launchConfiguration>

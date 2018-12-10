@@ -1,0 +1,17 @@
+package com.prpl.dao;
+
+import java.util.List;
+
+import com.prpl.model.Student;
+
+public interface StudentDAO {
+	
+	public void savestudent(Student stu);
+	public void updatestudent(Student stu );
+	public void deletestudent(int id);
+	public List<Student> list();
+	public Student getstudent(int id);
+	
+	
+
+}

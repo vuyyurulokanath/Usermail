@@ -1,0 +1,32 @@
+package com.prpl.DAO;
+
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+import com.prpl.Modelclass.Employee;
+@Repository("EmployeeDAO")
+public class EmployeeDaoImpl implements EmployeeDAO {
+	
+	
+	public SessionFactory factory;
+	
+	
+
+	public void saveemployee(Employee emp) {
+		factory.getCurrentSession().save(emp);
+		
+	}
+
+	public void updateemployee(int id, Employee emp) {
+		
+		
+		factory.getCurrentSession().load(Employee.class, id);
+		
+	}
+
+	public void deleteemployee(int id) {
+		
+
+	}
+
+}

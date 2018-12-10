@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="563" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="378" key="DIALOG_HEIGHT"/>
+		<item value="251" key="DIALOG_X_ORIGIN"/>
+		<item value="158" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/lokanath/workspace/JOINTABLES"/>
+			<item value="/home/lokanath/Desktop/Untitled Folder 3/SpringMVCCRUDSimple"/>
+			<item value="/home/lokanath/work/java-webapi-master "/>
+			<item value="/home/lokanath/work/java-webapi-master (2)"/>
+			<item value="/home/lokanath/work/FashionApp-master (2)"/>
+			<item value="/home/lokanath/work/java-webapi-master"/>
+			<item value="/home/lokanath/Downloads/pro/SpringSessionExample"/>
+			<item value="/home/lokanath/Downloads/pro/httpSession"/>
+			<item value="/home/lokanath/Downloads/pro/mailbygmail"/>
+			<item value="/home/lokanath/Downloads/pro/Untitled Folder/new/registration"/>
+			<item value="/home/lokanath/Downloads/pro/Untitled Folder/SpringMVCHibernateCRUD"/>
+			<item value="/home/lokanath/Documents/Untitled Folder/CRUD-spring-hibernate-tutorial/HibernateCRUD"/>
+			<item value="/home/lokanath/Documents/JSPSListRecords"/>
+			<item value="/home/lokanath/mysql /SpringMVCCRUDSimple"/>
+			<item value="/home/lokanath/mysql /spring-mvc-example"/>
+			<item value="/home/lokanath/mysql /HibernateWebApp"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item value="/home/lokanath/work" key="OUTSIDE_LOCATION"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.m2e"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="FilterByLocation"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/SprignmvcHibernateJsp/src/main/webapp/index.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="187" key="DIALOG_X_ORIGIN"/>
+			<item value="39" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
+</section>

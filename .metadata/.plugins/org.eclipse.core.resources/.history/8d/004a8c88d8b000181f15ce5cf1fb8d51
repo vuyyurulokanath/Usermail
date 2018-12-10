@@ -1,0 +1,37 @@
+package com.prpl.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.prpl.dao.FileUploadRepository;
+import com.prpl.model.UploadFile;
+@Service
+@Transactional
+public class UploadServiceImpl implements UploadService {
+	
+	@Autowired
+	FileUploadRepository fur;
+	public void setFileUploadRepository(FileUploadRepository fur)
+	{
+		this.fur=fur;
+	}
+	
+	@Transactional
+	public void store(UploadFile file ) {
+		fur.save(file);
+		
+		
+	}
+	@Transactional
+	public void update(UploadFile file) {
+		fur.save(file);
+		
+	}
+	@Transactional
+	public void delete(long id) {
+		fur.delete(id);
+		
+	}
+
+}

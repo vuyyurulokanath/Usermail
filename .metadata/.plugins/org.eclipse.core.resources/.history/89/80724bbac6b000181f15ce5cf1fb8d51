@@ -1,0 +1,11 @@
+package com.prpl.service;
+
+public interface UploadService {
+	
+	public void store();
+	public void update();
+	public void delete(long id);
+	
+	
+
+}

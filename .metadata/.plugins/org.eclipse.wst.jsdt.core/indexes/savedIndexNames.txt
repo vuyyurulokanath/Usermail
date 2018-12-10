@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/home/lokanath/work/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1017336851.index
+3432189673.index
+2573594293.index
+2797971704.index
+870272376.index
+1906537347.index

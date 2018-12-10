@@ -1,0 +1,23 @@
+package com.prpl.DAO;
+
+import org.springframework.stereotype.Repository;
+
+import com.prpl.Modelclass.Employee;
+@Repository
+public class EmployeeDaoImpl implements EmployeeDAO {
+
+	public void saveemployee(Employee emp) {
+		
+
+	}
+
+	public void updateemployee(int id, Employee emp) {
+		
+	}
+
+	public void deleteemployee(int id) {
+		
+
+	}
+
+}

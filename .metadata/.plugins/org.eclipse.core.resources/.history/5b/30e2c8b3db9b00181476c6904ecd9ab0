@@ -1,0 +1,16 @@
+package com.prpl.service;
+
+
+import com.prpl.model.Student;
+
+public interface ServiceDAO {
+	
+	int save(Student student);
+	void update(int id, Student student);
+	   void delete(int id);
+	
+	
+	
+	
+
+}

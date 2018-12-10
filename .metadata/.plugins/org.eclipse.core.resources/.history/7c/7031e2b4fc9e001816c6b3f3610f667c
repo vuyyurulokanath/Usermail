@@ -1,0 +1,17 @@
+package com.prpl.service;
+
+import com.prpl.model.Student;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	public void savestudent(Student stu) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void updatestudent(Student stu) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.prpl.service;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import org.springframework.transaction.annotation.Transactional;
+
+
+import com.prpl.model.Student;
+@Repository
+@Transactional
+public class StudentServiceImpl implements StudentService {
+	@Autowired
+	SessionFactory Dao;
+	
+	
+//	@Autowired
+//	StudentService Dao;
+//	
+	public boolean saveorUpdate(Student student) {
+		Session session=Dao.openSession();
+		
+		return  Dao;
+	}
+
+	public List<Student> list() {
+		// TODO Auto-generated method stub
+		return Dao.list();
+	}
+
+	public boolean delete(Student student) {
+		// TODO Auto-generated method stub
+		return Dao.delete(student);
+	}	
+}

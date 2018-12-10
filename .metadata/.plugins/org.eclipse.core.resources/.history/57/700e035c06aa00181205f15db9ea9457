@@ -1,0 +1,166 @@
+package com.prpl.controller;
+
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.FormParam;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import com.prpl.model.LoginModel;
+import com.prpl.model.User;
+import com.prpl.services.Userservicedao;
+
+@Controller
+public class UserController {
+
+	@Autowired
+
+	private Userservicedao dao;
+
+	public void setUserservice(Userservicedao dao) {
+		this.dao = dao;
+	}
+
+	@RequestMapping(value = "/users", method = RequestMethod.GET)
+	public ModelAndView getdata() {
+
+		List<User> list = dao.getlist();
+
+		ModelAndView model = new ModelAndView("admin");
+		model.addObject("lists", list);
+
+		return model;
+
+	}
+
+	@RequestMapping(value = "/newuser", method = RequestMethod.GET)
+	public ModelAndView newuser(ModelAndView model) {
+		User user= new User();
+		model = new ModelAndView("");
+		model.addObject("user", user);
+
+		return model;
+	}
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value = "/saveuser", method = RequestMethod.POST)
+	public ModelAndView saveuser(@ModelAttribute User user) {
+		if (user.getId() == 0) {
+		System.out.println("user is saved");
+			dao.adduser(user);
+			
+		} else {
+			System.out.println("user is updated ");
+			dao.updateuser(user);
+		}
+		return new ModelAndView("redirect:/users");
+	}
+
+	
+	
+	@RequestMapping("/remove/{id}")
+	public String removeemployee(@PathVariable("id") int id) {
+
+		dao.deleteuser(id);
+		return "redirect:/users";
+	}
+
+	@RequestMapping(value = "/edituser", method = RequestMethod.GET)
+	public ModelAndView editContact(HttpServletRequest request) {
+	
+		int userid = Integer.parseInt(request.getParameter("id"));
+		System.out.println("userid :::::"+userid);
+	
+		
+	User user = dao.getuserbyid(userid);
+	ModelAndView model = new ModelAndView("userdetails");
+	model.addObject("user",user);
+		
+		
+
+		
+		model.addObject("user", user);
+
+		return model;
+	}
+
+
+
+	@RequestMapping(value = "/loginpage", method = RequestMethod.GET)
+	public ModelAndView newContact(ModelAndView model) {
+		User user = new User();
+		model = new ModelAndView("login");
+		model.addObject("users", user);
+
+		return model;
+	}
+	
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView check(@FormParam("username") String username,@FormParam("password") String password ,ModelAndView model)
+	{
+//		String username=req.getParameter("username");
+//		String password=req.getParameter("password");
+		 String uname="username";
+		 System.out.println("username::::"+uname);
+		 String psw="password";
+		 System.out.println("password::::"+password);
+		 System.out.println(password);
+		
+		LoginModel login=new LoginModel();
+		login.setPassword(password);
+		login.setUsername(username);
+		String validate=dao.Authenticateuser(login);
+		System.out.println("validate::::"+validate);
+		
+		if(validate.equals("admin"))
+		{
+			System.out.println("page going to admin");
+			 model=new ModelAndView("redirect:/users");
+		}
+		else if(validate.equals("user"))
+		{
+//			int userid = Integer.parseInt(req.getParameter("id"));
+			String uname1="username";
+			
+			
+			User user=dao.getuserbyusername(username);
+			System.out.println(user);
+			
+			System.out.println("page going to user");
+			
+			model=new ModelAndView("userinfo");
+			model.addObject("user", user);
+			
+			
+		}
+		
+		
+		
+		
+		return model;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+}
+	
+	
+	
+	
+

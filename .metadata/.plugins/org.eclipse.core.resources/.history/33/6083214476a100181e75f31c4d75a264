@@ -1,0 +1,81 @@
+package com.prpl.operations;
+
+
+
+
+
+import java.sql.SQLException;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.prpl.model.User;
+
+
+
+public class Operations {
+	
+	
+	SessionFactory factory;
+	
+	public void setSessionFactory(SessionFactory factory)
+	{
+		this.factory=factory;
+	}
+	
+
+	public User insertData(User user) throws SQLException {
+		
+
+		Session session=factory.openSession();
+		Transaction t=session.beginTransaction();
+		
+		user.setName("name");
+		user.setEmail("email");
+		
+		session.save(user);
+		t.commit();
+		session.close();
+		return user;
+ 
+	}
+	public void listEmployees( ){
+		
+
+		Session session=factory.openSession();
+		Transaction t=session.beginTransaction();
+		 List users = session.createQuery("FROM User").list();
+		 for (Iterator iterator = users.iterator(); iterator.hasNext();)
+		 {
+			  User user1 = (User) iterator.next(); 
+			   System.out.print("name"+user1.getName());
+			   System.out.print("email"+user1.getEmail());
+			   t.commit();
+			   session.close();
+			   
+	}
+		
+	
+	}
+	 public void deleteEmployee(Integer userid){
+		   Session session = factory.openSession();
+		 
+		   Transaction tx=session.beginTransaction();
+		   User user = (User)session.get(User.class, userid); 
+	         session.delete(user); 
+	         tx.commit();
+		
+	}
+	 
+	 public void delete(String name){  
+		    String sql="delete from User where name="+name+"";  
+		    factory.getCurrentSession().update(sql);
+		}  
+	 
+	 
+	 
+}

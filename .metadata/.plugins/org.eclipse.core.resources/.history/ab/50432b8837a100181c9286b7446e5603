@@ -1,0 +1,19 @@
+package com.prpl.service;
+
+import java.util.List;
+
+
+import com.prpl.model.Student;
+
+
+public interface StudentService {
+ 
+	
+	
+	
+	public boolean saveOrupdate(Student student);
+	public List<Student> list();
+	public boolean delete(Student student);
+
+	
+}

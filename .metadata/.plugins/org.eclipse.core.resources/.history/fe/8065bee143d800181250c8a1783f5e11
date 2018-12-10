@@ -1,0 +1,54 @@
+package com.login.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.login.dao.UserSignupRepository;
+import com.login.entity.UserSignup;
+import com.login.model.UserBean;
+import com.login.social.providers.FacebookProvider;
+
+@Controller
+public class LoginController {
+	@Autowired
+	UserSignupRepository ur;
+	@Autowired 
+	FacebookProvider facebookProvider;
+	
+	
+	@RequestMapping(value = { "/","/login" })
+	public String login()
+	{
+		return "login";
+		
+	}
+	@RequestMapping(value="/signup")
+public ResponseEntity<Map<String ,Object>> signup(@RequestBody UserSignup user)
+{
+
+	Map<String, Object> map = new HashMap<String, Object>();
+   
+	UserSignup usp=ur.save(user);
+	map.put("data", usp);
+	map.put("message", "succussfull");
+	map.put("statu",true);	
+	return  ResponseEntity.ok().body(map);
+	
+}
+
+	@RequestMapping(value = "/google", method = RequestMethod.GET)
+	public String loginToGoogle(Model model) {
+		return googleProvider.getGoogleUserData(model, new UserBean());
+	}
+	
+
+}
+

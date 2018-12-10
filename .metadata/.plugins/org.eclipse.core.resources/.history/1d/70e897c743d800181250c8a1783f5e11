@@ -1,0 +1,44 @@
+package com.login.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.login.dao.UserSignupRepository;
+import com.login.entity.UserSignup;
+
+@Controller
+public class LoginController {
+	@Autowired
+	UserSignupRepository ur;
+	
+	
+	
+	@RequestMapping(value = { "/","/login" })
+	public String login()
+	{
+		return "login";
+		
+	}
+	@RequestMapping(value="/signup")
+public ResponseEntity<Map<String ,Object>> signup(@RequestBody UserSignup user)
+{
+
+	Map<String, Object> map = new HashMap<String, Object>();
+   
+	UserSignup usp=ur.save(user);
+	map.put("data", usp);
+	map.put("message", "succussfull");
+	map.put("statu",true);	
+	return  ResponseEntity.ok().body(map);
+	
+}
+	
+
+}
+

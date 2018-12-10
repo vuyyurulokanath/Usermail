@@ -1,0 +1,22 @@
+package com.prpl.service;
+
+import com.prpl.model.UploadFile;
+
+public class UploadServiceImpl implements UploadService {
+
+	public void store(UploadFile file ) {
+		
+		
+	}
+
+	public void update(UploadFile file) {
+		
+		
+	}
+
+	public void delete(long id) {
+		
+		
+	}
+
+}

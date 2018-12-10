@@ -1,0 +1,29 @@
+package com.prpl.service;
+
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+import com.prpl.Modelclass.Employee;
+@Repository("serviceDAO")
+public class ServiceDaoImpl implements ServiceDAO {
+
+	
+	public SessionFactory factory;
+	
+	public void saveEmployee(Employee emp) {
+		factory.getCurrentSession().save(emp);
+		
+		
+	}
+
+	public void updateEmployee(int id, Employee emp) {
+		
+		
+	}
+
+	public void deleteEmployee(int id) {
+		
+		
+	}
+
+}

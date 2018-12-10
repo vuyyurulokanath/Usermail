@@ -1,0 +1,22 @@
+package com.prpl.service;
+
+import com.prpl.model.Student;
+
+public class ServiceDAOImpl implements ServiceDAO {
+
+	public int save(Student student) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void update(int id, Student student) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.prpl.model;
+
+public class UploadFile {
+	
+	private long id;
+    private String fileName;
+    private byte[] data;
+
+}

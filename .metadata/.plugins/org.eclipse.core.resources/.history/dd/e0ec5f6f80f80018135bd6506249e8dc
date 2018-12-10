@@ -1,0 +1,31 @@
+package com.application.socialConfig;
+
+import org.springframework.core.env.Environment;
+import org.springframework.social.UserIdSource;
+import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
+import org.springframework.social.config.annotation.SocialConfigurer;
+import org.springframework.social.connect.ConnectionFactoryLocator;
+import org.springframework.social.connect.UsersConnectionRepository;
+import org.springframework.social.security.AuthenticationNameUserIdSource;
+
+public class SocialContext implements SocialConfigurer{
+
+	@Override
+	public void addConnectionFactories(ConnectionFactoryConfigurer cfconfig, Environment env) {
+		cfconfig.addConnectionFactory(new GoogleConnectionFactory(env.getProperty("google.client-id"),env.getProperty("google.client-screet")));
+		
+	}
+
+	@Override
+	public UserIdSource getUserIdSource() {
+		
+		return new AuthenticationNameUserIdSource();
+	}
+
+	@Override
+	public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator arg0) {
+		
+		return null;
+	}
+
+}

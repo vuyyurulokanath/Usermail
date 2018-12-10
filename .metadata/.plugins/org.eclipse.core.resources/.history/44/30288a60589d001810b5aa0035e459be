@@ -1,0 +1,33 @@
+package com.prpl.dao;
+
+import java.util.List;
+
+import com.prpl.model.Employee;
+
+public class EmployeeDAOImpl implements EmployeeDAO {
+
+	public void addEmployee(Employee employee) {
+	
+	}
+
+	public List<Employee> getAllEmployees() {
+		
+		return null;
+	}
+
+	public void deleteEmployee(Integer employeeId) {
+		
+
+	}
+
+	public Employee updateEmployee(Employee employee) {
+		
+		return null;
+	}
+
+	public Employee getEmployee(int employeeid) {
+		
+		return null;
+	}
+
+}

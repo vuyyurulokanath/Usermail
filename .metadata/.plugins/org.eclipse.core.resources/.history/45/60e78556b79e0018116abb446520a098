@@ -1,0 +1,5 @@
+package com.prpl.model;
+
+public class Employee {
+
+}

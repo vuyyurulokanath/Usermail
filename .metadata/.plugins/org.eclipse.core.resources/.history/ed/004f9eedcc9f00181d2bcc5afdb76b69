@@ -1,0 +1,101 @@
+package com.prpl.controller;
+
+
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+//import org.springframework.beans.factory.annotation.Qualifier;
+
+
+import com.prpl.controller.StudentController;
+import com.prpl.model.Student;
+import com.prpl.service.StudentService;
+
+@Controller
+@RequestMapping("/student")
+public class StudentController {
+	
+	@Autowired
+	StudentService service;
+@RequestMapping(value="/register", method=RequestMethod.GET)
+	public String register(Map<String,Object>map)
+	{
+	map.put("student", new Student());
+	
+		return "student/register";
+		
+	}
+@RequestMapping(value="create",method=RequestMethod.POST)	 
+public String create(Student student,Map<String, Object>map)
+{
+	service.addstudent(student);
+	
+	return "redirect/student/details"+student.getId();
+	
+}
+@RequestMapping(value="/details", method=RequestMethod.POST)
+	public String details(Student student,Map<String, Object>map)
+	{
+	
+	map.put("firstname",student.getFirstname());
+	map.put("lastname",student.getLastname());
+	map.put("email",student.getEmail());
+	map.put("address",student.getAddress());
+	
+		return "user/details";
+		
+	}
+	
+	
+	
+}
+//	private StudentService service;
+//
+//	@Autowired(required = true)
+////	@Qualifier(value = "StudentService")
+//	public void setStudentService(StudentService service) {
+//		this.service = service;
+//	}
+//
+//	@RequestMapping(value = "/students", method = RequestMethod.GET)
+//	public String liststudents(Model model) {
+//		model.addAttribute("student", new Student());
+//		model.addAttribute("liststudents", this.service.liststudents());
+//		return "student";
+//	}
+//
+//	@RequestMapping(value = "/add", method = RequestMethod.POST)
+//	public ModelAndView addstudent(@ModelAttribute("student") Student stu) {
+//
+//		if (stu.getId() == 0) {
+//
+//			this.service.addstudent(stu);
+//		} else {
+//
+//			this.service.updatestudent(stu);
+//		}
+//
+//		return new ModelAndView("redirect:add");
+//
+//	}
+//
+//	@RequestMapping("/remove/{id}")
+//	public String removestudent(@PathVariable("id") int id) {
+//
+//		this.service.removestudent(id);
+//		return "redirect:/students";
+//	}
+//
+//	@RequestMapping("/edit/{id}")
+//	public String editstudent(@PathVariable("id") int id, Model model) {
+//		model.addAttribute("student", this.service.getstudentById(id));
+//		model.addAttribute("liststudents", this.service.liststudents());
+//		return "liststudents";
+//	}
+//
+//}

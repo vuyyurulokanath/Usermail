@@ -1,0 +1,38 @@
+package com.prpl.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.prpl.DAO.StudentDAO;
+import com.prpl.model.Student;
+@Service("serviceDAOImpl")
+public class ServiceDAOImpl {
+	@Autowired
+	StudentDAO dao;
+	@Transactional
+	public void addstudent(Student student)
+	{
+		dao.addstudent(student);
+	}
+	@Transactional
+	public void updatestudent(Student student)
+	{
+		dao.updatestudent(student);
+	}
+	@Transactional
+	public void deletestudent(int id)
+	{
+		dao.deletestudent(id);
+	}
+	@Transactional
+	public List getstudentinfo()
+	{
+		return dao.getstudentinfo();
+		
+	}
+	
+	
+}

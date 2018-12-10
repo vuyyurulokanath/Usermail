@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="296" key="x"/>
+		<item value="24" key="y"/>
+		<item value="577" key="height"/>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/home/lokanath/Downloads/OAuth2Sample-master"/>
+			<item value="/home/lokanath/Downloads/OAuth2.0_AuthCode_part_3"/>
+			<item value="/home/lokanath/Downloads/api-platform-samples-master"/>
+			<item value="/home/lokanath/Downloads/social login/spring-social-examples-master"/>
+			<item value="/home/lokanath/Downloads/nixmash-spring-master/jpa/src"/>
+			<item value="/home/lokanath/Downloads/nixmash-spring-master/mvc"/>
+			<item value="/home/lokanath/Downloads/nixmash-spring-master"/>
+			<item value="/home/lokanath/Downloads/spring-boot-react-oauth2-social-login-demo-master"/>
+			<item value="/home/lokanath/Downloads/google-gmail-api-master"/>
+			<item value="/home/lokanath/Downloads/social-login-oauth2-spring-boot-master"/>
+			<item value="/home/lokanath/Downloads/spring-security-oauth2-google-1-master"/>
+			<item value="/home/lokanath/work/FashionApp-master (2)"/>
+			<item value="/home/lokanath/work/java-webapi-master"/>
+			<item value="/home/lokanath/Desktop/Untitled Folder 3/FashionApp-master"/>
+			<item value="/home/lokanath/Downloads/pro/Untitled Folder/FashionApp-master"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="/home/lokanath/work"/>
+			<item value="/home/lokanath/work/java-webapi-master "/>
+			<item value="/home/lokanath/work/Springboot-Oauth-Example"/>
+			<item value="/home/lokanath/work/UserLikes"/>
+			<item value="/home/lokanath/work/LOGIN"/>
+			<item value="/home/lokanath/work/USERLOGINFORM"/>
+			<item value="/home/lokanath/Downloads/pro/Untitled Folder/new/spring boot/boot/spring-boot-jwt-auth"/>
+			<item value="/home/lokanath/work/JOINTABLES"/>
+			<item value="/home/lokanath/work/JPAADMINUSER"/>
+			<item value="/home/lokanath/work/AdminAndUserRole"/>
+			<item value="/home/lokanath/work/userlogin"/>
+			<item value="/home/lokanath/Downloads/pro/Untitled Folder/new/SpringMvcExample (3)"/>
+			<item value="/home/lokanath/Downloads/pro/Untitled Folder/new/spr-mvc-hib-master"/>
+			<item value="/home/lokanath/work/RestFullServices"/>
+			<item value="/home/lokanath/work/SprignmvcHibernateJsp"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.prpl.application.UserApplication"/>
+		</list>
+		<list key="groupId">
+			<item value="com.prpl.application"/>
+		</list>
+		<list key="artifactId">
+			<item value="UserApplication"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

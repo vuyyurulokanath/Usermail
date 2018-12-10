@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Constants.java&apos; to &apos;USERLOGINFORM/src/main/java/com.prpl.controller&apos;&#x0A;- Original project: &apos;spring-boot-jwt-auth&apos;&#x0A;- Destination element: &apos;USERLOGINFORM/src/main/java/com.prpl.controller&apos;&#x0A;- Original element: &apos;com.devglan.model.Constants.java&apos;" description="Copy compilation unit" destination="=USERLOGINFORM/src\/main\/java&lt;com.prpl.controller" element1="/src\/main\/java&lt;com.devglan.model{Constants.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1537352964127" units="1" version="1.0"/>
+</session>

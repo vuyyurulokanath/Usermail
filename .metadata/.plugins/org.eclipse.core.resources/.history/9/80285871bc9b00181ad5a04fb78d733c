@@ -1,0 +1,37 @@
+package com.prpl.service;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.prpl.model.Student;
+@Repository
+public class ServiceDAOImpl implements ServiceDAO {
+	 @Autowired
+	   private SessionFactory factory;
+	 
+	 
+	 
+	 
+	 
+	public int save(Student student) {
+		
+	factory.getCurrentSession().save(student);
+		
+		
+		
+		
+		return student.getId();
+	}
+
+	public void update(int id, Student student) {
+		
+
+	}
+
+	public void delete(int id) {
+		
+
+	}
+
+}

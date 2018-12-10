@@ -1,0 +1,13 @@
+package com.prpl.dao;
+
+import com.prpl.model.Student;
+
+public interface StudentDAO {
+	
+	public void savestudent(Student stu);
+	public void updatestudent(Student stu );
+	
+	
+	
+
+}

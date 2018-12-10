@@ -1,0 +1,57 @@
+package com.prpl.service;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.prpl.model.Student;
+@Repository
+@Transactional
+public class StudentServiceImpl implements StudentService {
+	@Autowired
+	public SessionFactory factory;
+	
+	
+	
+	@Transactional
+	public void savestudent(Student stu) {
+		
+		factory.getCurrentSession().save(stu);
+		
+
+	}
+	@Transactional
+	public void updatestudent(Student stu) {
+	factory.getCurrentSession().update(stu);
+		
+		
+
+	}
+	@Transactional
+	public Student getStudent(int studentid)
+	{
+		
+		return 	factory.getCurrentSession().load(Student.class, studentid);
+		
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Student> list()
+	{
+		
+		
+		
+		return(List<Student>) factory.getCurrentSession().createNamedQuery("from Student");
+		
+	}
+	public void deletestudent(int id)
+	{
+		factory.getCurrentSession().delete(id);
+	}
+
+}

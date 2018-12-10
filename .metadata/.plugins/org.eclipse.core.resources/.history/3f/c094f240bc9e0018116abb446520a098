@@ -1,0 +1,8 @@
+package com.prpl.DAO;
+
+public interface EmployeeDAO {
+	
+	
+	
+
+}

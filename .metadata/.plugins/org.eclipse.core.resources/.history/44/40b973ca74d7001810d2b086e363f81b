@@ -1,0 +1,9 @@
+package com.login.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.login.model.UserDetails;
+
+public interface UserdetailsRepository  extends JpaRepository<UserDetails, Long>{
+
+}

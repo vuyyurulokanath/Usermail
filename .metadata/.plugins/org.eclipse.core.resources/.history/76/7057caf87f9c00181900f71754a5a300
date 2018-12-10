@@ -1,0 +1,21 @@
+package com.prpl.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.prpl.Modelclass.Employee;
+import com.prpl.service.ServiceDAO;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	ServiceDAO dao;
+	
+	public void saveEmployee(Employee emp)
+	{
+		dao.saveEmployee(emp);
+		
+	}
+	
+
+}

@@ -1,0 +1,80 @@
+package com.prpl.Controller;
+
+
+import java.io.File;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.prpl.model.UploadFile;
+
+import com.prpl.service.UploadService;
+
+@Controller
+public class FileController {
+	@Autowired
+	UploadService us;
+	public void setUploadService(UploadService us)
+	{
+		this.us=us;
+	}
+	
+	
+	 @GetMapping("/upload")
+	public ModelAndView newupload(ModelAndView model) {
+	
+
+		return new ModelAndView( "upload");
+	}
+	
+	
+	
+	
+	
+	
+	
+	 @PostMapping("/uploadFile")
+	public ModelAndView upload(@RequestParam("file") MultipartFile file) throws IOException
+	{
+		 ModelAndView model=new ModelAndView();
+		String error="Please select a file to upload";
+		 if (file.isEmpty()) {
+	            model.addObject("message", error);
+	            return new ModelAndView ("uploadstatus");
+	        }
+		String rootPath = new File("file").getPath();
+		
+		String filename=file.getOriginalFilename();
+		byte[] bytes =file.getBytes();
+		
+		UploadFile ufile=new UploadFile();
+		ufile.setFileName(filename);
+		ufile.setData(bytes);
+us.store(ufile);		
+		return new ModelAndView("susses");
+		
+	}
+	 
+	 
+	 
+	 
+	 public ModelAndView showimage()
+	 {
+		 
+		 
+		 List<UploadFile> list= us.list();
+		return null;
+		 
+	 }
+	
+	
+
+}

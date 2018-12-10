@@ -1,0 +1,34 @@
+package com.prpl.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.prpl.dao.FileUploadRepository;
+import com.prpl.model.UploadFile;
+
+public class UploadServiceImpl implements UploadService {
+	
+	@Autowired
+	FileUploadRepository fur;
+	public void setFileUploadRepository(FileUploadRepository fur)
+	{
+		this.fur=fur;
+	}
+	
+
+	public void store(UploadFile file ) {
+		fur.save(file);
+		
+		
+	}
+
+	public void update(UploadFile file) {
+		fur.save(file);
+		
+	}
+
+	public void delete(long id) {
+		fur.delete(id);
+		
+	}
+
+}

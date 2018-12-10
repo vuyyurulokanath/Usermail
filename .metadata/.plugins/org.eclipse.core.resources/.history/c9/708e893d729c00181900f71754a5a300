@@ -1,0 +1,22 @@
+package com.prpl.service;
+
+import com.prpl.Modelclass.Employee;
+
+public class ServiceDaoImpl implements ServiceDAO {
+
+	public void saveEmployee(Employee emp) {
+		
+		
+	}
+
+	public void updateEmployee(int id, Employee emp) {
+		
+		
+	}
+
+	public void deleteEmployee(int id) {
+		
+		
+	}
+
+}

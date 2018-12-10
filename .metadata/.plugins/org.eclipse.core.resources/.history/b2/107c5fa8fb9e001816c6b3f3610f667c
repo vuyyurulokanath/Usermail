@@ -1,0 +1,9 @@
+package com.prpl.dao;
+
+public interface StudentDAO {
+	
+	
+	
+	
+
+}

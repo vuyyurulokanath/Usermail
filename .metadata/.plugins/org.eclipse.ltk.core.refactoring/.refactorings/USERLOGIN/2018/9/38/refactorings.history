@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.prpl.ApplicationUser&apos; to &apos;com.prpl.model&apos;&#x0A;- Original project: &apos;USERLOGIN&apos;&#x0A;- Original element: &apos;USERLOGIN/src/main/java/com.prpl.ApplicationUser&apos;&#x0A;- Renamed element: &apos;USERLOGIN/src/main/java/com.prpl.model&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.prpl.ApplicationUser&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.prpl.ApplicationUser" name="com.prpl.model" qualified="false" references="true" stamp="1537181550820" textual="false" version="1.0"/>
+</session>

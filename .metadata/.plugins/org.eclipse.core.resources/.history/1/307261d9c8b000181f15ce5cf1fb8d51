@@ -1,0 +1,22 @@
+package com.prpl.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.prpl.service.UploadService;
+
+@Controller
+public class FileController {
+	@Autowired
+	UploadService us;
+	public void setUploadService(UploadService us)
+	{
+		this.us=us;
+	}
+	
+	
+	
+	
+	
+
+}

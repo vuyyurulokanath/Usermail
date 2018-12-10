@@ -1,0 +1,31 @@
+package com.prpl.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.prpl.model.Student;
+@Service
+@Transactional
+public class EmployeeServiceImpl implements EmployeeService {
+	@Autowired
+	public EmployeeService service;
+	
+	
+	
+	@Transactional
+	public void savestudent(Student stu) {
+		
+		service.savestudent(stu);
+		
+
+	}
+
+	public void updatestudent(Student stu) {
+		service.updatestudent(stu);
+		
+		
+
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.prpl.dao;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.prpl.model.Employee;
+
+public class EmployeeDAOImpl implements EmployeeDAO {
+
+	
+	  @Autowired
+	    private SessionFactory sessionFactory;
+	public void addEmployee(Employee employee) {
+		  sessionFactory.getCurrentSession().saveOrUpdate(employee);
+	}
+
+	public List<Employee> getAllEmployees() {
+		
+		return null;
+	}
+
+	public void deleteEmployee(Integer employeeId) {
+		
+
+	}
+
+	public Employee updateEmployee(Employee employee) {
+		
+		return null;
+	}
+
+	public Employee getEmployee(int employeeid) {
+		
+		return null;
+	}
+
+}

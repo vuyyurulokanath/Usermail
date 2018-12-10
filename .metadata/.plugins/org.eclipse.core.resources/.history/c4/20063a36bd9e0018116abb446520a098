@@ -1,0 +1,12 @@
+<html>
+<body>
+<h2>STUDENT REGISTRATION</h2>
+</body>
+
+<center>
+         <h2>Enter details</h2>
+         
+           <table width = "100%" border = "1" align = "center">
+<jsp:forward page = "date.jsp" />
+
+</html>

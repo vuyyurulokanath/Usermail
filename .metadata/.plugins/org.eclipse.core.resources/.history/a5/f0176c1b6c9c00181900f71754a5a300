@@ -1,0 +1,22 @@
+package com.prpl.DAO;
+
+import com.prpl.Modelclass.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDAO {
+
+	public void saveemployee(Employee emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void updateemployee(int id, Employee emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void deleteemployee(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

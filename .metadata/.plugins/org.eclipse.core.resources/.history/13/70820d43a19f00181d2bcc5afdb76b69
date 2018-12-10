@@ -1,0 +1,73 @@
+package com.prpl.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
+
+
+import com.prpl.model.Student;
+@Repository
+public class StudentDaoImpl implements StudentDAO {
+	
+	private static final Logger logger = LoggerFactory.getLogger(StudentDaoImpl.class);
+
+	private SessionFactory factory;
+	
+	public void setSessionFactory(SessionFactory factory){
+		this.factory = factory;
+	}
+	
+	
+	public void addstudent(Student stu) {
+	Session session=factory.getCurrentSession();
+	
+		session.persist(stu);
+		logger.info("student deatils are saved"+stu);
+	
+		
+	}
+
+	public void updatestudent(Student stu) {
+		Session session=factory.getCurrentSession();
+		session.update(stu);
+		logger.info("student deatils are updated"+stu);
+	}
+
+	public List<Student> liststudents() {
+		Session session=factory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+		List <Student> list =session.createQuery("from Stduent").list();
+		for(Student  stu : list){
+			logger.info("student List::"+stu);
+		}
+		return list;
+		
+		
+	}
+
+	public Student getstudentById(int id) {
+		
+		Session session=factory.getCurrentSession();
+		
+		Student stu=(Student)session.load(Student.class,new Integer(id));
+		logger.info("student loaded successfully, Student details="+stu);
+		return stu;
+	}
+
+	public void removestudent(int id) {
+		
+		
+		Session session=factory.getCurrentSession();
+		Student stu=(Student)session.load(Student.class,new Integer(id));
+		if(null != stu){
+			session.delete(stu);
+		}
+		logger.info("student deleted successfully, student details="+stu);
+	}
+	
+	
+} 

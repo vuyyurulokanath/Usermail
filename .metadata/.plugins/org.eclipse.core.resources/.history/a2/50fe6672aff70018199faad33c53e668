@@ -1,0 +1,5 @@
+package com.application.socialConfig;
+
+public class SocialContext {
+
+}

@@ -1,0 +1,41 @@
+package com.prpl.service;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.prpl.model.Student;
+@Repository
+@Transactional
+public class StudentServiceImpl implements StudentService {
+	@Autowired
+	public SessionFactory factory;
+	
+	
+	
+	@Transactional
+	public void savestudent(Student stu) {
+		
+		factory.getCurrentSession().save(stu);
+		
+
+	}
+	@Transactional
+	public void updatestudent(Student stu) {
+		service.updatestudent(stu);
+		
+		
+
+	}
+	@Transactional
+	public Student getStudent(int studentid)
+	{
+		
+		return 	service.getStudent(studentid);
+		
+		
+	}
+
+}

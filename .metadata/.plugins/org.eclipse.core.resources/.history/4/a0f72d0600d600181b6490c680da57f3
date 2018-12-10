@@ -1,0 +1,5 @@
+package com.prpl.dao;
+
+public interface UserRepository {
+
+}

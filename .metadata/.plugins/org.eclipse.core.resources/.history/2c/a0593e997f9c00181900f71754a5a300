@@ -1,0 +1,12 @@
+package com.prpl.controller;
+
+
+@RestController
+public class EmployeeController {
+	
+	
+	
+	
+	
+
+}
